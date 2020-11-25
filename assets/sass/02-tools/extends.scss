@@ -1,0 +1,127 @@
+/* Button extends */
+// Button Placeholder style
+// - Since buttons appear in various blocks,
+//   let’s use a placeholder to keep them all
+//   in-sync
+%button-style {
+	@include crop-text(var(--button--line-height));
+	color: var(--button--color-text);
+	cursor: pointer;
+	font-weight: var(--button--font-weight);
+	font-family: var(--button--font-family);
+	font-size: var(--button--font-size);
+	background-color: var(--button--color-background);
+	border-radius: var(--button--border-radius);
+	border: var(--button--border-width) solid var(--button--color-background);
+	text-decoration: none;
+	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
+
+	&:active {
+		color: var(--button--color-text-active);
+		background-color: var(--button--color-background-active);
+	}
+
+	&:hover {
+		color: var(--button--color-text-hover);
+		background: transparent;
+	}
+
+	&:focus,
+	&.has-focus {
+		outline-offset: -4px;
+		outline: 2px dotted currentColor;
+	}
+
+	&:disabled {
+		background-color: var(--global--color-white-50);
+		border-color: var(--global--color-white-50);
+		color: var(--button--color-text-active);
+	}
+}
+
+%hamburger {
+	position: relative;
+	width: 3em;
+	height: 3em;
+	font-size: var(--hamburger--size);
+	color: var(--hamburger--color);
+	padding: 0;
+	border-radius: 50%;
+	transition: all .2s;
+	-webkit-tap-highlight-color: transparent;
+
+	span {
+		top: 50%;
+		margin-top: -.125em;
+
+		&,
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: .25em;
+			border-radius: .25em;
+			background-color: #fff;
+			left: 0;
+			transform: rotate(0);
+			transition: width .4s, top .2s .2s, left .2s, right .2s, transform .2s, background-color .4s .2s;
+			pointer-events: none;
+		}
+
+		&:before {
+			left: 1em;
+			top: .8em;
+			width: 2em;
+		}
+
+		&:after {
+			left: 0;
+			top: -.8em;
+			width: 2em;
+		}
+	}
+
+	&:hover {
+
+		span {
+			width: 2em;
+			left: .5em;
+
+			&:before,
+			&:after {
+				left: 0;
+			}
+		}
+	}
+
+	&[aria-expanded="true"] {
+
+		span {
+			background-color: initial;
+
+			&,
+			&:before,
+			&:after {
+				left: .5em;
+				transition: background-color .2s, top .2s, left .2s, transform .2s .15s;
+			}
+
+			&:before,
+			&:after {
+				left: 0;
+				top: 0;
+				width: 2em;
+			}
+
+			&:before {
+				transform: rotate(-45deg);
+			}
+
+			&:after {
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

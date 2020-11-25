@@ -1,0 +1,96 @@
+.customize-control {
+
+	.devices-wrapper {
+
+		button {
+			padding: 0;
+			cursor: pointer;
+			background: none;
+			border: none;
+			outline: none;
+
+			> i {
+				width: 15px;
+				height: 15px;
+				font-size: 15px;
+			}
+
+			&.active {
+				color: var(--customize--color-primary);
+			}
+		}
+	}
+}
+
+/*
+.vky-field-settings-modal {
+
+	.devices-wrapper {
+		margin-top: 6px;
+	}
+}
+
+.customize-control-vky-responsive .input-wrapper {
+	overflow: hidden;
+
+	input {
+		display: none;
+		width: 82%;
+		float: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	.vky-responsive-select {
+		width: 50px;
+		display: none;
+		padding: .1em;
+		margin: 0 0 0 2px;
+		float: none;
+	}
+
+	.vky-responsive-input.active + .vky-responsive-select {
+		display: block;
+		width: 17%;
+		float: none;
+	}
+
+	.vky-non-responsive {
+
+		&.vky-responsive-input {
+			display: inline-block;
+
+			&.active {
+				display: inline-block;
+			}
+		}
+
+		&.vky-responsive-select {
+			display: inline-block;
+		}
+	}
+}
+
+#customize-control-vinky-settings-body-font-size.customize-control-vky-responsive .input-wrapper {
+	display: inline-block;
+
+	.vky-responsive-select {
+		display: none;
+	}
+
+	.vky-responsive-input {
+		width: 100%;
+	}
+}
+
+.input-wrapper.vky-responsive-wrapper {
+	display: inline-flex;
+	justify-content: space-between;
+	margin-right: 0;
+	align-items: flex-start;
+	flex: 0 1;
+	width: 100%;
+}
+*/

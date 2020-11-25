@@ -1,0 +1,200 @@
+// Add the @font-face styles here.
+@font-face {
+	font-family: Vinky;
+	src: url(./assets/fonts/vinky.eot?wy0bao);
+	/* stylelint-disable declaration-colon-newline-after */
+	src: url(./assets/fonts/vinky.eot?wy0bao#iefix) format("embedded-opentype"),
+		url(./assets/fonts/vinky.ttf?wy0bao) format("truetype"),
+		url(./assets/fonts/vinky.woff?wy0bao) format("woff"),
+		url(./assets/fonts/vinky.svg?wy0bao#Vinky) format("svg");
+	/* stylelint-enable */
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+%vky-icon {
+	font-family: Vinky !important; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.vky-icon {
+	@extend %vky-icon;
+}
+
+.vky-icon-download:before {
+	content: "\e929";
+}
+
+.vky-icon-form:before {
+	content: "\e92a";
+}
+
+.vky-icon-resource:before {
+	content: "\e92e";
+}
+
+.vky-icon-eye:before {
+	content: "\e932";
+}
+
+.vky-icon-ariett:before {
+	content: "\e915";
+}
+
+.vky-icon-lab:before {
+	content: "\e91b";
+}
+
+.vky-icon-stack:before {
+	content: "\e91e";
+}
+
+.vky-icon-search:before {
+	content: "\e90c";
+}
+
+.vky-icon-logo:before {
+	content: "\e90f";
+}
+
+.vky-icon-youtube:before {
+	content: "\e90b";
+}
+
+.vky-icon-twitter:before {
+	content: "\e901";
+}
+
+.vky-icon-facebook:before {
+	content: "\e903";
+}
+
+.vky-icon-linkedin:before {
+	content: "\e907";
+}
+
+.vky-icon-cart:before {
+	content: "\e906";
+}
+
+.vky-icon-fast_forward:before {
+	content: "\e90e";
+}
+
+.vky-icon-fast_rewind:before {
+	content: "\e91f";
+}
+
+.vky-icon-pause:before {
+	content: "\e904";
+}
+
+.vky-icon-play:before {
+	content: "\e910";
+}
+
+.vky-icon-email:before {
+	content: "\e927";
+}
+
+.vky-icon-add:before {
+	content: "\e911";
+}
+
+.vky-icon-close:before {
+	content: "\e905";
+}
+
+.vky-icon-edit:before {
+	content: "\e912";
+}
+
+.vky-icon-brightness:before {
+	content: "\e92b";
+}
+
+.vky-icon-comment:before {
+	content: "\e92c";
+}
+
+.vky-icon-computer:before {
+	content: "\e930";
+}
+
+.vky-icon-desktop_mac:before {
+	content: "\e931";
+}
+
+.vky-icon-phone_iphone:before {
+	content: "\e933";
+}
+
+.vky-icon-nav_before:before {
+	content: "\e913";
+}
+
+.vky-icon-nav_next:before {
+	content: "\e914";
+}
+
+.vky-icon-near:before {
+	content: "\e934";
+}
+
+.vky-icon-zoom_out:before {
+	content: "\e90a";
+}
+
+.vky-icon-arrow_back:before {
+	content: "\e919";
+}
+
+.vky-icon-arrow_forward:before {
+	content: "\e91a";
+}
+
+.vky-icon-less:before {
+	content: "\e917";
+}
+
+.vky-icon-more:before {
+	content: "\e918";
+}
+
+.vky-icon-favorite:before {
+	content: "\e935";
+}
+
+.vky-icon-settings:before {
+	content: "\e937";
+}
+
+.vky-icon-construction:before {
+	content: "\e939";
+}
+
+.vky-icon-east:before {
+	content: "\e920";
+}
+
+.vky-icon-north:before {
+	content: "\e921";
+}
+
+.vky-icon-south:before {
+	content: "\e922";
+}
+
+.vky-icon-west:before {
+	content: "\e923";
+}

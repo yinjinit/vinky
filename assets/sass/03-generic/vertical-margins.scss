@@ -1,0 +1,16 @@
+/**
+ * Site Structure
+ *
+ * - Set vertical margins and responsive widths on
+ *   top-level wrappers and content wrappers
+ * - `--global--width-content` is a responsive veriable
+ * - See: globals/_global-width-responsive.scss
+ */
+
+.widget {
+	//margin-bottom: 48px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

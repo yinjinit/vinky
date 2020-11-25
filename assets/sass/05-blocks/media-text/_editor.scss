@@ -1,0 +1,12 @@
+.wp-block-media-text {
+
+	.block-editor-inner-blocks {
+		padding-right: var(--global--spacing-horizontal);
+		padding-left: var(--global--spacing-horizontal);
+	}
+
+	// Block Styles
+	&.is-style-vinky-border {
+		border: calc(3 * var(--separator--height)) solid var(--global--color-border);
+	}
+}

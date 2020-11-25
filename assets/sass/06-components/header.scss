@@ -1,0 +1,252 @@
+// Site header
+.site-header {
+	height: var(--primary-nav--height);
+	background-color: var(--primary-nav--background);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 999;
+
+	&.is-mobile-menu {
+		height: var(--primary-nav--height);
+	}
+
+	.admin-bar & {
+		top: 32px;
+	}
+
+	> .container,
+	> .container-fluid {
+		@include make-row();
+		align-items: flex-start;
+		row-gap: var(--global--spacing-vertical); // Add space in case the menu wraps below the site branding.
+		height: var(--primary-nav--height);
+
+		.wp-custom-logo & {
+			align-items: center;
+		}
+	}
+}
+
+// Site branding
+.site-branding {
+	color: var(--branding--color-text);
+	@include make-col();
+
+	&:last-child {
+		margin-right: 0;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+// Site title
+.site-title {
+
+	color: var(--branding--color-link);
+	font-family: var(--branding--title--font-family);
+	font-size: var(--branding--title--font-size-mobile);
+	letter-spacing: normal;
+	text-transform: var(--branding--title--text-transform);
+	line-height: var(--global--line-height-heading);
+	margin-bottom: calc(var(--global--spacing-vertical) / 6);
+
+	a {
+		border-bottom: none;
+		color: currentColor;
+		font-weight: var(--branding--title--font-weight);
+
+		&:link,
+		&:visited,
+		&:active {
+			color: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--global--color-secondary);
+		}
+
+	}
+
+	@include media(mobile) {
+		font-size: var(--branding--title--font-size);
+	}
+}
+
+// Site description
+.site-description {
+	color: currentColor;
+	font-family: var(--branding--description--font-family);
+	font-size: var(--branding--description--font-size);
+	line-height: 1.4;
+}
+
+// Site logo
+
+.site-logo {
+	display: flex;
+
+	.site-header > & {
+		display: flex;
+		width: 100%;
+		padding-bottom: calc(var(--global--spacing-vertical) * 1.5);
+		border-bottom: 1px solid;
+		text-align: center;
+	}
+
+	.custom-logo-link {
+		display: flex;
+	}
+
+	.custom-logo {
+		margin-left: auto;
+		margin-right: auto;
+		width: var(--branding-logo--width-mobile);
+		height: auto;
+		max-width: 100%;
+		max-height: var(--branding-log--max-height-mobile);
+		display: inline-block;
+
+		.is-desktop-menu & {
+			width: var(--branding-logo--width);
+			height: auto;
+			max-width: 100%;
+			max-height: var(--branding-log--max-height);
+		}
+	}
+}
+
+.secondary-navigation {
+
+	.is-desktop-menu .menu-overlay &,
+	.is-mobile-menu #top-bar & {
+		display: none;
+	}
+}
+
+.menu-overlay {
+
+	.is-mobile-menu & {
+		background: var(--mobile-menu--background-overlay);
+		display: none;
+		visibility: hidden;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		@include toggle-transition();
+
+		.admin-bar & {
+			top: 46px;
+		}
+	}
+
+	&.vky-shown {
+		display: block;
+		z-index: var(--mobile-menu-z-index);
+	}
+
+	&.vky-visible {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.menu-overlay-container {
+
+	.is-mobile-menu & {
+		width: calc(100% - var(--mobile-menu--social-width));
+		height: 100%;
+		background: var(--mobile-menu--background);
+		overflow-x: hidden;
+		overflow-y: auto;
+		transform: translateX(calc(0px - var(--global--transform-offset)));
+		@include toggle-transition();
+
+		.vky-display-name {
+			display: none;
+		}
+
+		.vky-search {
+
+			.vky-search-container {
+				display: none;
+			}
+		}
+	}
+
+	.is-mobile-menu .menu-overlay.vky-visible & {
+		transform: translateX(0);
+	}
+
+	.vky-search-form {
+		padding: calc(2 * var(--primary-nav--padding)) var(--mobile-menu--spacing-horizontal);
+		visibility: visible;
+		opacity: 1;
+
+		input {
+			background: var(--global--color-light-gray);
+		}
+	}
+}
+
+.mobile-menu-closer {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--mobile-menu--button-closer);
+	width: var(--hamburger--size);
+	height: var(--hamburger--size);
+	background-color: var(--hamburger--background);
+	border-radius: 50%;
+	margin-top: var(--global--spacing-vertical);
+	margin-bottom: var(--global--spacing-vertical);
+	margin-left: var(--global--spacing-vertical);
+
+	.is-mobile-menu & {
+		display: flex;
+	}
+}
+
+.menu-extra {
+	height: 100%;
+	padding-left: calc(2 * var(--primary-nav--padding));
+}
+
+// Change order based on header layout.
+.header-1 {
+
+	.is-desktop-menu {
+
+		.mobile-hamburger {
+			order: 2;
+		}
+	}
+}
+
+.mobile-header-1 {
+
+	.is-mobile-menu {
+
+		.mobile-hamburger {
+			order: 1;
+		}
+
+		.site-branding {
+			order: 2;
+		}
+
+		.menu-extra {
+			order: 3;
+		}
+	}
+}
+
+// Local scrolling when mobile menu opens.
+.lock-scrolling {
+	overflow: hidden;
+}

@@ -1,0 +1,41 @@
+// Footer
+.site-footer {
+
+	a {
+		color: currentColor;
+		border-bottom: none;
+
+		&:link,
+		&:visited,
+		&:active {
+			color: currentColor;
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--footer--color-link);
+		}
+	}
+
+	.site-name {
+		text-transform: var(--branding--title--text-transform);
+		font-size: var(--branding--title--font-size);
+	}
+
+	.site-logo img {
+		max-width: 100%;
+	}
+
+	@include media(tablet-only) {
+
+		.site-name,
+		.menu-socials-container {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.widget.widget_nav_menu > nav {
+		margin: 0;
+	}
+}

@@ -1,0 +1,175 @@
+.page-title {
+	font-family: var(--global--font-secondary);
+	font-size: var(--global--font-size-page-title);
+}
+
+h1.page-title,
+h2.page-title {
+	font-weight: var(--heading--font-weight-page-title);
+}
+
+h1.page-title {
+	line-height: var(--heading--line-height-h1);
+}
+
+.page-header {
+	padding-top: 118px;
+	background-color: #101010;
+	background-size: cover;
+	background-position: center;
+
+	@include media(tablet-only) {
+		padding-top: 78px;
+	}
+
+	.container {
+		@include make-row();
+		align-items: center;
+		min-height: 180px;
+	}
+
+	.page-title {
+		color: #fff;
+	}
+}
+
+.page-footer {
+	border-top: 2px solid #ececec;
+	padding: 19px 0;
+}
+
+.archive,
+.search {
+
+	.content-area {
+
+		.format-aside,
+		.format-status,
+		.format-link {
+
+			.entry-content {
+				font-size: var(--global--font-size-lg);
+			}
+		}
+	}
+}
+
+.post-archive,
+.post-single {
+	padding: 55px 0 60px;
+
+	.content-wrapper {
+		@include media(tablet) {
+			max-width: 66.6666%;
+			padding-right: 35px;
+		}
+	}
+}
+
+.search {
+
+	.search-result {
+		padding: 55px 0;
+
+		article {
+			display: flex;
+			flex-wrap: wrap;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid #d9d9d9;
+
+			.entry-thumbnail {
+				flex: 0 0 auto;
+				width: auto;
+			}
+
+			.entry-content {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+				padding-left: 15px;
+			}
+
+			.entry-title {
+				font-size: 25px;
+				line-height: 30px;
+				letter-spacing: .5px;
+
+				> a {
+					color: #044195;
+
+					&:hover {
+						color: #e2a610;
+					}
+				}
+			}
+		}
+	}
+}
+
+.sidebar {
+
+	.widget {
+		margin-bottom: 30px;
+
+		.widget-title {
+			font-family: var(--global--font-primary);
+			font-size: 15px;
+			line-height: 19px;
+			padding: 22px 20px 14px 38px;
+			background-color: #82bc00;
+			border-radius: 5px 5px 0 0;
+			color: #fff;
+		}
+
+		> * {
+			background: #fafafa;
+			padding: 15px 20px 20px 35px;
+			font-size: 13px;
+			font-weight: 600;
+
+			&:last-child {
+				border-radius: 0 0 5px 5px;
+			}
+		}
+
+		h5,
+		h6,
+		ul li a {
+			color: #044195;
+		}
+
+		h5 {
+			font-family: var(--global--font-primary);
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		.textwidget {
+
+			h6 {
+				font-family: var(--global--font-primary);
+				font-size: 10px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-top: 12px;
+
+			}
+
+			.contact-text {
+				font-family: var(--global--font-secondary);
+				font-size: 12px;
+				line-height: 14px;
+				font-style: italic;
+			}
+
+			.contact-link {
+				color: inherit;
+				font-size: 14px;
+				line-height: 19px;
+				font-style: italic;
+			}
+		}
+	}
+}
+

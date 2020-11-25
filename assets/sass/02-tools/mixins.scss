@@ -1,0 +1,70 @@
+// Crop Text Boundary
+// - Sets a fixed-width on content within alignwide and alignfull blocks
+@mixin crop-text($inset-line-height: 1) {
+
+	line-height: $inset-line-height;
+	$offset-top: calc(.5em * #{$inset-line-height} + -.38);
+	$offset-bottom: calc(.5em * #{$inset-line-height} + -.39);
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		height: 0;
+		width: 0;
+	}
+
+	&:before {
+		margin-bottom: -($offset-top);
+	}
+
+	&:after {
+		margin-top: -($offset-bottom);
+	}
+}
+
+// Transitions
+@mixin toggle-transition() {
+	transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+// Grid Mixins
+@mixin make-container() {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin make-row() {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@mixin make-col() {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+@mixin make-col-auto() {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%;
+}
+
+@mixin clearfix() {
+
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+
+@mixin row-cols($count) {
+
+	> * {
+		flex: 0 0 100% / $count;
+		max-width: 100% / $count;
+	}
+}
